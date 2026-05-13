@@ -1,6 +1,6 @@
-import sys
 import os
 import pandas as pd
+
 
 def load(path: str) -> pd.DataFrame:
     """Take a csv file and returns a dataset"""
@@ -9,7 +9,8 @@ def load(path: str) -> pd.DataFrame:
         if not target.lower().endswith(".csv"):
             raise AssertionError("Only 'csv'format supported.")
         if not os.path.exists(target):
-            raise AssertionError("File does not exist / is in the wrong directory.")
+            raise AssertionError("File does not exist / \
+                is in the wrong directory.")
 
         dataset = pd.read_csv(target)
         print(f"Loading dataset of dimensions : {dataset.shape}")

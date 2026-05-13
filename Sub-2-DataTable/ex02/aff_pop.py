@@ -1,9 +1,7 @@
 import matplotlib.pyplot as plt
-from matplotlib import ticker as plticker
 import sys
-import os
 from load_csv import load
-import pandas as pd
+
 
 def format_numbers(pop_val):
     """Takes a string representing a number ending with
@@ -15,6 +13,7 @@ def format_numbers(pop_val):
         return float(pop_val[:-1]) * 1e3
     else:
         return float(pop_val)
+
 
 def main():
     """Creates a double lined graph showing the evolution of population
@@ -32,8 +31,10 @@ def main():
         years = france_data.columns[1:].astype(int)
         mask = years <= 2050
         years = years[mask]
-        pop_values_fr = [format_numbers(x) for x in france_data.iloc[0, 1:][mask]]
-        pop_values_bl = [format_numbers(x) for x in belgium_data.iloc[0, 1:][mask]]
+        pop_values_fr = [format_numbers(x) for x
+                         in france_data.iloc[0, 1:][mask]]
+        pop_values_bl = [format_numbers(x) for x
+                         in belgium_data.iloc[0, 1:][mask]]
 
         plt.plot(years, pop_values_fr, label='France', color='blue')
         plt.plot(years, pop_values_bl, label='Belgium', color='green')
@@ -43,7 +44,8 @@ def main():
         plt.ylabel("Population")
         plt.xticks(range(1800, 2051, 40), range(1800, 2051, 40))
         plt.xlim(1790, 2060)
-        plt.yticks([20000000, 40000000, 60000000, 80000000], ["20M","40M","60M", None])
+        plt.yticks([20000000, 40000000, 60000000, 80000000],
+                   ["20M", "40M", "60M", None])
         plt.legend()
         plt.show()
 

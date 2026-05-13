@@ -1,8 +1,7 @@
 import matplotlib.pyplot as plt
 import sys
-import os
 from load_csv import load
-import pandas as pd
+
 
 def main():
     """Creates a graph about life expectancy in France"""

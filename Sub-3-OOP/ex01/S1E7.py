@@ -1,5 +1,6 @@
 from S1E9 import Character
 
+
 class Baratheon(Character):
     """Representing the Baratheon family"""
 
@@ -14,7 +15,7 @@ class Baratheon(Character):
     def die(self):
         """Changes is_alive from True to False"""
         self.is_alive = False
-    
+
     def __str__(self):
         """Returns a string representing the specs of the class"""
         return f"Vector: ('{self.family_name}', '{self.eyes}', '{self.hairs}')"
@@ -46,7 +47,7 @@ class Lannister(Character):
     def __repr__(self):
         """Returns a string representing the specs of the class"""
         return f"Vector: ('{self.family_name}', '{self.eyes}', '{self.hairs}')"
-    
+
     @classmethod
     def create_lannister(cls, first_name, is_alive):
         """Alternate method to instance a Lannister"""

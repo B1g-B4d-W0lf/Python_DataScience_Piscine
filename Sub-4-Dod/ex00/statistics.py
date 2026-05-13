@@ -18,7 +18,7 @@ def give_q2(num_list, list_len):
         q2 = num_list[int((list_len - 1) / 2)]
     else:
         q2 = num_list[int(list_len / 2)]
-    
+
     print(f"median: {q2}")
     return
 
@@ -27,7 +27,7 @@ def give_q1_q3(num_list, list_len):
     if list_len <= 1:
         print("ERROR")
         return
-    
+
     q1 = float(num_list[int(list_len / 4)])
     q3 = float(num_list[int((list_len / 4) * 3)])
 
@@ -56,7 +56,7 @@ def give_var(num_list, list_len):
     if list_len <= 1:
         print("ERROR")
         return
-    
+
     mean = sum(num_list) / list_len
 
     sqd = [(x - mean)**2 for x in num_list]
@@ -91,4 +91,3 @@ def ft_statistics(*args: any, **kwargs: any) -> None:
                 give_var(num_list, list_len)
             case _:
                 pass
-

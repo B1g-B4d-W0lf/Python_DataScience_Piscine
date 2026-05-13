@@ -1,11 +1,9 @@
-from load_image import ft_load
 import numpy as np
-from PIL import Image
 import matplotlib.pyplot as plt
 import sys
-import os
 
-def ft_invert(img : np.array) -> np.array:
+
+def ft_invert(img: np.array) -> np.array:
     """Invert the colors on an image. """
     try:
         invert_img = img.copy()
@@ -21,9 +19,10 @@ def ft_invert(img : np.array) -> np.array:
 
     return invert_img
 
-def ft_red(img : np.array) -> np.array:
+
+def ft_red(img: np.array) -> np.array:
     """Keeps only the red channel of an image"""
-    try :
+    try:
         red_img = img.copy()
         red_img[:, :, 1] = 0
         red_img[:, :, 2] = 0
@@ -35,12 +34,13 @@ def ft_red(img : np.array) -> np.array:
     except Exception as e:
         print(f"Exeption :\n{e}\n Has been caught.")
         sys.exit(1)
-    
+
     return red_img
 
-def ft_green(img : np.array) -> np.array:
+
+def ft_green(img: np.array) -> np.array:
     """Keeps only the green channel of an image"""
-    try :
+    try:
         green_img = img.copy()
         green_img[:, :, 0] = 0
         green_img[:, :, 2] = 0
@@ -55,7 +55,8 @@ def ft_green(img : np.array) -> np.array:
 
     return green_img
 
-def ft_blue(img : np.array) -> np.array:
+
+def ft_blue(img: np.array) -> np.array:
     """Keeps only the blue channel of an image"""
     try:
         blue_img = img.copy()
@@ -72,11 +73,12 @@ def ft_blue(img : np.array) -> np.array:
 
     return blue_img
 
-def ft_grey(img : np.array) -> np.array:
+
+def ft_grey(img: np.array) -> np.array:
     """Turns a colored image in shades of grey"""
     try:
         grey_img = img.copy()
-        grey_img = np.dot(grey_img[...,:3], [0.2989, 0.5870, 0.1140])
+        grey_img = np.dot(grey_img[..., :3], [0.2989, 0.5870, 0.1140])
 
         plt.imshow(grey_img, cmap=plt.get_cmap('gray'))
         plt.title("Grey")

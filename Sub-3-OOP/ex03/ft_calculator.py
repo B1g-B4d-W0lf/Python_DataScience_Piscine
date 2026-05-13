@@ -27,4 +27,3 @@ class calculator:
             print(self.vector)
         except ZeroDivisionError as e:
             print(f"Error '{e}'\nCannot divide by 0.")
-

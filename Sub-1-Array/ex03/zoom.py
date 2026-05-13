@@ -1,12 +1,13 @@
 from load_image import ft_load
 import numpy as np
-from PIL import Image
 import matplotlib.pyplot as plt
 import sys
 import os
 
+
 def rgbtogray(rgb) -> np.array:
-    return np.dot(rgb[...,:3], [0.2989, 0.5870, 0.1140])
+    return np.dot(rgb[..., :3], [0.2989, 0.5870, 0.1140])
+
 
 def main():
     try:
@@ -16,7 +17,8 @@ def main():
         if not target.lower().endswith((".jpg", ".jpeg")):
             raise AssertionError("Only 'jpg' or 'jpeg' format supported.")
         if not os.path.exists(target):
-            raise AssertionError("File does not exist / is in the wrong directory.")
+            raise AssertionError("File does not exist / \
+                is in the wrong directory.")
 
         target = ft_load(target)
         print(target)
@@ -33,7 +35,6 @@ def main():
 
         plt.imshow(z_img, cmap=plt.get_cmap('gray'))
         plt.show()
-
 
     except AssertionError as e:
         print(e)

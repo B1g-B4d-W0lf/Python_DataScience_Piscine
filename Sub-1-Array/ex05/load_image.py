@@ -1,6 +1,7 @@
 import numpy as np
 from PIL import Image
 
+
 def ft_load(path: str) -> np.array:
     try:
         image = Image.open(path)
@@ -10,5 +11,5 @@ def ft_load(path: str) -> np.array:
 
     except Exception as e:
         print(f"Exception : {e} has been caught")
-        sys.exit(1)
+        exit()
     return None

@@ -1,5 +1,6 @@
 from S1E7 import Baratheon, Lannister
 
+
 class King(Baratheon, Lannister):
     """Creates the worst individual known to man"""
 
@@ -17,4 +18,3 @@ class King(Baratheon, Lannister):
 
     def get_hairs(self):
         return self.hairs
-
